@@ -1,4 +1,4 @@
-from chemlib import getMolarMass as ptable_getMolarMass
+from Ptable import getMolarMass
 from re import findall, search
 
 
@@ -11,10 +11,9 @@ class Compound():
 				self.elements[search("[A-Z][a-z]?[a-z]?", element).group(0)] = int(search("[1-9][0-9]?", element).group(0))
 			else:
 				self.elements[search("[A-Z][a-z]?[a-z]?", element).group(0)] = 1
-		print self.elements
 
 	def getMolarMass(self):
 		mm = 0.0
 		for element in self.elements.keys():
-			mm += ptable_getMolarMass(element) * self.elements[element]
+			mm += getMolarMass(element) * self.elements[element]
 		return mm

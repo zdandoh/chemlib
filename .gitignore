@@ -1,3 +1,5 @@
 .idea
 *.pyc
 Thumbs.db
+dist
+/__init__.py
